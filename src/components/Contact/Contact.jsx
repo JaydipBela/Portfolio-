@@ -2,6 +2,10 @@ import { useState, useEffect } from 'react'
 import { FiSend, FiMapPin, FiMail, FiPhone } from 'react-icons/fi'
 import emailjs from 'emailjs-com'
 import './Contact.css'
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
 
@@ -19,10 +23,8 @@ const Contact = () => {
   })
 
  
-  useEffect(() => {
-    
-    emailjs.init('LwOMJmlZOMZl9Tff8')
-  }, [])
+
+
 
   const contactInfo = [
     {
@@ -116,7 +118,42 @@ const Contact = () => {
   }
 
 
+useEffect(() => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".contact",
+      start: "top 60%",
+      toggleActions: "play none none none"
+    }
+  });
 
+  tl.fromTo('.contact .section-title',
+    { opacity: 0, y: 30 },
+    { opacity: 1, y: 0, duration: 0.6 }
+  )
+    .fromTo('.contact-intro',
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.6 },
+      "-=0.3"
+    )
+    .fromTo('.contact-content',
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.6 },
+      "-=0.3"
+    )
+    .fromTo('.contact-info',
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.6 },
+      "-=0.3"
+    )
+    .fromTo('.contact-form-container',
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.6 },
+      "-=0.3"
+    )
+ 
+  emailjs.init('LwOMJmlZOMZl9Tff8')
+}, []);
 
   return (
     <section id="contact" className="contact">

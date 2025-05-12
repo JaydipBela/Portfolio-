@@ -1,5 +1,10 @@
 import { FiCode, FiLayers, FiTool, FiDatabase, FiUsers, FiClock, FiRefreshCw, FiEdit3 } from 'react-icons/fi'
 import './Skills.css'
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect } from 'react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Skills = () => {
 
@@ -30,6 +35,46 @@ const Skills = () => {
 
 
 
+ useEffect(() => {
+   const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".skills",      
+      start: "top 50%",      
+      toggleActions: "play none none none" 
+    }
+  });
+
+  tl.fromTo('.skills-intro', 
+    { opacity: 0, y: 20 }, 
+    { opacity: 1, y: 0, duration: 0.5 }
+  )
+   .fromTo('.skills .section-title', 
+    { opacity: 0, y: 20 }, 
+    { opacity: 1, y: 0, duration: 0.5 }, 
+    "-=0.2" 
+  )
+  .fromTo('.skills-grid', 
+    { opacity: 0, y: 20 }, 
+    { opacity: 1, y: 0, duration: 0.5 }, 
+    "-=0.2" 
+  )
+  .fromTo('.soft-skills-container', 
+    { opacity: 0, y: 20 }, 
+    { opacity: 1, y: 0, duration: 0.5 }, 
+    "-=0.2" 
+  )
+  .fromTo('.soft-skills-grid', 
+    { opacity: 0, y: 20 }, 
+    { opacity: 1, y: 0, duration: 0.5 }, 
+    "-=0.2" 
+  )
+  .fromTo('.soft-skill-item', 
+    { opacity: 0, y: 20 }, 
+    { opacity: 1, y: 0, duration: 0.5 }, 
+    "-=0.2" 
+  )
+
+}, []);
 
   return (
     <section id="skills" className="skills">

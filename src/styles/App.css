@@ -9,7 +9,7 @@ main {
   flex: 1;
 }
 
-/* Animation Keyframes */
+
 @keyframes fadeIn {
   from {
     opacity: 0;

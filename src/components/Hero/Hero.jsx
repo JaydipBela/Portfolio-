@@ -2,6 +2,11 @@ import { Link } from 'react-scroll'
 import { FiGithub, FiLinkedin, FiMessageCircle, FiArrowDown } from 'react-icons/fi'
 import './Hero.css'
 import images from '../../assets/Images.js'
+import { useEffect } from 'react';
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
 
@@ -12,6 +17,44 @@ const Hero = () => {
   ]
 
 
+ useEffect(() => {
+  const tl = gsap.timeline();
+
+  tl.fromTo('.greeting', 
+    { opacity: 0, y: 20 }, 
+    { opacity: 1, y: 0, duration: 0.5 }
+  )
+  .fromTo('.name', 
+    { opacity: 0, y: 20 }, 
+    { opacity: 1, y: 0, duration: 0.5 }, 
+    "-=0.2" 
+  )
+  .fromTo('.title', 
+    { opacity: 0, y: 20 }, 
+    { opacity: 1, y: 0, duration: 0.5 }, 
+    "-=0.3"
+  )
+  .fromTo('.description', 
+    { opacity: 0, y: 20 }, 
+    { opacity: 1, y: 0, duration: 0.5 }, 
+    "-=0.3"
+  )
+  .fromTo('.cta-buttons', 
+    { opacity: 0, y: 20 }, 
+    { opacity: 1, y: 0, duration: 0.5 }, 
+    "-=0.3"
+  )
+  .fromTo('.social-links', 
+    { opacity: 0, y: 20 }, 
+    { opacity: 1, y: 0, duration: 0.5 }, 
+    "-=0.3"
+  )
+  .fromTo('.hero-image-container', 
+    { opacity: 0, scale: 0.8 },
+    { opacity: 1, scale: 1, duration: 0.5 }, 
+
+  );
+}, []);
 
   return (
     <section id="home" className="hero">
@@ -22,7 +65,7 @@ const Hero = () => {
           </span>
 
           <h1 className="name">
-           Jaydip Bela
+            Jaydip Bela
           </h1>
 
           <div className="title-wrapper">

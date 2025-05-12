@@ -1,6 +1,11 @@
 import { FiDownload, FiUser, FiMail, FiMapPin, FiCalendar } from 'react-icons/fi'
 import './About.css'
 import images from '../../assets/Images.js'
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
+import { useEffect } from 'react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
 
@@ -31,6 +36,67 @@ const About = () => {
     }
   ]
 
+useEffect(() => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".about",
+      start: "top 50%",
+      toggleActions: "play none none none"
+    }
+  });
+
+  tl.fromTo('.about .section-title',
+    { opacity: 0, y: 30 },
+    { opacity: 1, y: 0, duration: 0.6 }
+  )
+    .fromTo('.about-content',
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.6 },
+      "-=0.3"
+    )
+    .fromTo('.about-image img',
+      { scale: 0.8, opacity: 0 },
+      { scale: 1, opacity: 1, duration: 0.6 },
+      "-=0.3"
+    )
+    .fromTo('.about-text',
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.6 },
+      "-=0.3"
+    )
+    .fromTo('.personal-info',
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.6 },
+      "-=0.3"
+    )
+    .fromTo('.resume-btn',
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.6 },
+      "-=0.3"
+    )
+    .fromTo('.qualifications',
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.6 },
+      "-=0.3"
+    )
+    .fromTo('.tabs-container',
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.6 },
+      "-=0.3"
+    )
+    .fromTo('.education',
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.6 },
+      "-=0.3"
+    )
+    .fromTo('.experience',
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.6 },
+      "-=0.3"
+    )
+  
+   
+}, []);
 
 
   return (
