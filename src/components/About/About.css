@@ -1,0 +1,278 @@
+.about {
+  background-color: var(--bg-secondary);
+  padding: var(--space-7) 0;
+}
+
+.about .section-title {
+  color: var(--color-gray-50);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: var(--space-5);
+  margin-bottom: var(--space-6);
+}
+
+.about-image {
+  position: relative;
+  opacity: 1;
+}
+
+.about-text {
+  opacity: 1;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--card-shadow);
+}
+
+.about-text h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-3);
+  color: var(--color-primary);
+}
+
+.about-text p {
+  margin-bottom: var(--space-3);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.personal-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.info-icon {
+  width: 30px;
+  height: 30px;
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.info-value {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.resume-btn {
+  margin-top: var(--space-3);
+}
+
+.resume-btn .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+/* Qualifications section */
+.qualifications {
+  margin-top: var(--space-5);
+}
+
+.tabs-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-4);
+  gap: var(--space-3);
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  padding: var(--space-1) var(--space-2);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.tab-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+  transform: scaleX(0);
+  transition: transform var(--transition-fast);
+}
+
+.tab-btn:hover {
+  color: var(--color-primary);
+}
+
+.tab-btn.active {
+  color: var(--color-primary);
+}
+
+.tab-btn.active::after {
+  transform: scaleX(1);
+}
+
+.timeline {
+  position: relative;
+  padding: var(--space-2) 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background-color: var(--color-primary);
+}
+
+.timeline-item {
+  position: relative;
+  padding: var(--space-2) var(--space-4);
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+  padding-right: var(--space-5);
+  text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+  padding-left: var(--space-5);
+}
+
+.timeline-dot {
+  position: absolute;
+  top: var(--space-3);
+  width: 16px;
+  height: 16px;
+  background-color: var(--color-accent);
+  border: 3px solid var(--color-primary);
+  border-radius: var(--radius-full);
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+  right: -8px;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+  left: -8px;
+}
+
+.timeline-content {
+  background-color: var(--card-bg);
+  padding: var(--space-3);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--card-shadow);
+}
+
+.timeline-content h4 {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-1);
+  color: var(--text-primary);
+}
+
+.timeline-place {
+  font-weight: 500;
+  color: var(--color-primary);
+  margin-bottom: 4px;
+}
+
+.timeline-date {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-1);
+}
+
+.timeline-content p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .about-image {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: var(--space-5);
+    padding-right: var(--space-2);
+    text-align: left;
+  }
+
+  .timeline-item:nth-child(odd) {
+    left: 0;
+    padding-right: var(--space-2);
+    text-align: left;
+  }
+
+  .timeline-item:nth-child(even) {
+    left: 0;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-dot {
+    left: 12px;
+    right: auto;
+  }
+
+  .timeline-item:nth-child(even) .timeline-dot {
+    left: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .personal-info {
+    grid-template-columns: 1fr;
+  }
+}
