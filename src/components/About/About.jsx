@@ -98,6 +98,10 @@ useEffect(() => {
    
 }, []);
 
+useEffect(() => {
+  ScrollTrigger.refresh();
+}, []);
+
 
   return (
     <section id="about" className="about">

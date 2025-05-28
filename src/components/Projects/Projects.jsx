@@ -126,6 +126,11 @@ useEffect(() => {
 }, []);
 
 
+useEffect(() => {
+  ScrollTrigger.refresh();
+}, [filteredProjects]);
+
+
 return (
   <section id="projects" className="projects">
     <div className="container">
