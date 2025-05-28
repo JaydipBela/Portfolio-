@@ -111,6 +111,10 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 aria-label={link.label}
                 className="social-icon"
+                onClick={() => {
+                  const loader = document.getElementById('loader');
+                  if (loader) loader.style.display = 'none';
+                }}
               >
                 {link.icon}
               </a>
