@@ -9,6 +9,17 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
+  const handleSocialClick = (url, e) => {
+    e.preventDefault();
+    // Hide loader immediately
+    const loader = document.getElementById('loader');
+    if (loader) loader.style.display = 'none';
+    
+    // Set a small timeout to ensure smooth transition on mobile
+    setTimeout(() => {
+      window.location.href = url;
+    }, 50);
+  };
 
   const socialLinks = [
     { icon: <FiGithub />, url: 'https://github.com/', label: 'GitHub' },
@@ -107,14 +118,9 @@ const Hero = () => {
               <a
                 key={index}
                 href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
                 aria-label={link.label}
                 className="social-icon"
-                onClick={() => {
-                  const loader = document.getElementById('loader');
-                  if (loader) loader.style.display = 'none';
-                }}
+                onClick={(e) => handleSocialClick(link.url, e)}
               >
                 {link.icon}
               </a>
