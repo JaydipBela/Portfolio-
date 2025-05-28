@@ -32,6 +32,11 @@
         100% { transform: rotate(360deg);}
       }
     </style>
+     <script>
+      window.addEventListener('load', function() {
+        document.getElementById('loader').style.display = 'none';
+      });
+    </script>
   </head>
   <body>
     <!-- Loader HTML -->
@@ -39,11 +44,7 @@
       <div class="spinner"></div>
     </div>
     <div id="root"></div>
-    <script>
-      window.addEventListener('load', function() {
-        document.getElementById('loader').style.display = 'none';
-      });
-    </script>
+   
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
