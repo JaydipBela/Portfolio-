@@ -86,12 +86,21 @@
   color: var(--text-primary);
   font-size: 1.25rem;
   transition: all var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
 }
 
 .social-icon:hover {
   background-color: var(--color-primary);
   color: white;
   transform: translateY(-3px);
+}
+
+.social-icon:active {
+  transform: scale(0.95);
 }
 
 .hero-image-container {
