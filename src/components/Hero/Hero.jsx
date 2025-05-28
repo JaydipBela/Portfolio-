@@ -107,10 +107,12 @@ const Hero = () => {
               <a
                 key={index}
                 href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
                 aria-label={link.label}
                 className="social-icon"
+                onClick={e => {
+                  e.preventDefault();
+                  window.open(link.url, '_blank', 'noopener,noreferrer');
+                }}
               >
                 {link.icon}
               </a>
