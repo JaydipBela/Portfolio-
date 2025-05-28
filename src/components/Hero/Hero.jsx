@@ -11,14 +11,14 @@ gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {
   const handleSocialClick = (url, e) => {
     e.preventDefault();
+    e.stopPropagation();
+    
     // Hide loader immediately
     const loader = document.getElementById('loader');
     if (loader) loader.style.display = 'none';
     
-    // Set a small timeout to ensure smooth transition on mobile
-    setTimeout(() => {
-      window.location.href = url;
-    }, 50);
+    // Navigate immediately on mobile
+    window.location.href = url;
   };
 
   const socialLinks = [
@@ -120,7 +120,8 @@ const Hero = () => {
                 href={link.url}
                 aria-label={link.label}
                 className="social-icon"
-                onClick={(e) => handleSocialClick(link.url, e)}
+                onClick={handleSocialClick.bind(null, link.url)}
+                onTouchStart={(e) => e.preventDefault()}
               >
                 {link.icon}
               </a>
