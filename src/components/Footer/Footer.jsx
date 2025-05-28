@@ -8,7 +8,7 @@ const Footer = () => {
   // Social links
   const socialLinks = [
     { icon: <FiGithub />, url: 'https://github.com/', label: 'GitHub' },
-    { icon: <FiLinkedin />, url: 'https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile', label: 'LinkedIn' },
+    { icon: <FiLinkedin />, url: 'https://www.linkedin.com/in/bela-jaydip-b2b431309', label: 'LinkedIn' },
     { icon: <FiMessageCircle />, url: 'mailto:contact@example.com', label: 'Message' }
   ]
 
