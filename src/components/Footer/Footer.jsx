@@ -53,7 +53,7 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <p className="copyright">
-            &copy; {currentYear} Jadyip Bela. All Rights Reserved.
+            &copy; {currentYear} Jaydip Bela. All Rights Reserved.
           </p>
           <p className="made-with">
             Made with <FiHeart className="heart-icon" /> in React.js

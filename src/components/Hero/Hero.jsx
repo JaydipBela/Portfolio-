@@ -13,11 +13,11 @@ const Hero = () => {
     e.preventDefault();
     e.stopPropagation();
     
-    // Hide loader immediately
+    
     const loader = document.getElementById('loader');
     if (loader) loader.style.display = 'none';
     
-    // Navigate immediately on mobile
+
     window.location.href = url;
   };
 
