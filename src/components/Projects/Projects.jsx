@@ -20,16 +20,6 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const currentWorking = {
-    id: 1,
-    title: "E-commerce",
-    description:
-      " e-commerce platform for contemporary furniture and home décor, built with React. Featuring responsive design, intuitive navigation, and interactive product displays with hover effects, the site offers a seamless shopping experience across Home, Shop, Blog, About, and Contact sections. Users can browse curated furniture collections, read design-focused blog content, and easily manage their shopping cart, all within an elegant interface that showcases modern living solutions",
-    image: images.TheModernLook,
-    tags: ["React", "JavaScript", "Responsive" ,"Node.js","Express.js","MongoDB"],
-    demoLink: "#",
-    githubLink: "#",
-  };
   const projectsData = [
     {
       id: 1,
@@ -174,7 +164,7 @@ const Projects = () => {
 
           <div className="projects-grid ">
             {filteredProjects.map((project) => (
-              <div key={currentWorking.id} className="project-card ">
+              <div key={project.id} className="project-card ">
                 <div className="project-image">
                   <img src={project.image} alt={project.title} />
                   <div className="project-overlay">
