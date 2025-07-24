@@ -35,9 +35,9 @@ const Projects = () => {
       id: 1,
       title: "The Modern Look",
       description:
-        "The Modern Look is a sleek e-commerce platform for contemporary furniture and home décor, built with React. Featuring responsive design, intuitive navigation, and interactive product displays with hover effects, the site offers a seamless shopping experience across Home, Shop, Blog, About, and Contact sections. Users can browse curated furniture collections, read design-focused blog content, and easily manage their shopping cart, all within an elegant interface that showcases modern living solutions",
+        "Built a modern e-commerce platform using React, featuring a fully responsive design for seamless performance across all devices. The site includes interactive product listings and dynamic single-page views for both products and blog posts, showcasing detailed content, customer reviews, and smooth user interaction. Implemented Swiper.js to create engaging sliders and carousels for product images and featured blog content. Developed a functional shopping cart system using Redux Toolkit and managed navigation with React Router. The UI is styled entirely with custom CSS to ensure a clean, modern, and user-friendly experience.",
       image: images.TheModernLook,
-      tags: ["React", "JavaScript", "Responsive"],
+      tags: ["React", "JavaScript", "Responsive","Redux"],
       demoLink: "https://the-modern-look.vercel.app/",
       githubLink: "https://github.com/JaydipBela/TheModernLook",
     },
@@ -51,8 +51,6 @@ const Projects = () => {
       tags: ["React", "JavaScript", "APIs", "Responsive"],
       demoLink: "https://weather-git-main-jaydipbelas-projects.vercel.app/",
       githubLink: "https://github.com/JaydipBela/weather",
-      demoLink: "",
-      githubLink: "",
     },
     {
       id: 3,
