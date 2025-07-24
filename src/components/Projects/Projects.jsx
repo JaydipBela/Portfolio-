@@ -230,30 +230,7 @@ const Projects = () => {
                 </div>
               </div>
             ))}
-            <div key={currentWorking.id} className="project-card ">
-              <div className="current-overly">
-              <div className="project-image">
-                <img src={currentWorking.image} alt={currentWorking.title} />
-                
-              </div>
-              <div className="project-info">
-                <h3>{currentWorking.title}</h3>
-                <div className="project-tags">
-                  {currentWorking.tags.map((tag, tagIndex) => (
-                    <span key={tagIndex} className="project-tag">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <button
-                  className="read-more-btn"
-                  onClick={() => openProjectModal(currentWorking)}
-                >
-                  Read More
-                </button>
-              </div>
-              </div>
-            </div>
+        
           </div>
 
           {isModalOpen && selectedProject && (
